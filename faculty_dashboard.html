@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="static/faculty_dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Faculty Dashboard</h1>
+            <button class="logout-btn" id="logoutButton">Logout</button>
+        </header>
+
+        <div class="profile-section">
+            <h2>Profile</h2>
+            <p><strong>Name:</strong>bhaskar</p>
+            <p><strong>Username:</strong> bhaskar</p>
+            <p><strong>Role:</strong> FACULTY</p>
+            <p><strong>Branch:</strong> COMPUTER SCIENCE</p>
+        </div>
+
+        <div class="event-section">
+            <h2>Manage Events</h2>
+            <button id="addEventBtn">+ Add Event</button>
+            <input type="date" id="eventDate">
+            <button id="filterButton">Filter</button>
+        </div>
+
+        <table id="eventTable">
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Location</th>
+                    <th>Created On</th>
+                    <th>Description</th>
+                    <th>Media</th>
+                    <th>Created By</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Event rows will be added here dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Add Event Form -->
+        <div id="addEventForm" class="add-event-form hidden">
+            <h2>Add Event</h2>
+            <form id="eventForm">
+                <label>Event Name: <input type="text" id="eventName" required></label>
+
+                <label>Location:                 <input type="text" id="eventLocation" required>
+                </label>
+
+                <label>From Date:                 <input type="date" id="fromDate" required>
+                </label>
+
+                <label>To Date:                <input type="date" id="toDate" required>
+                </label>
+
+                <label>Description:                 <textarea id="eventDescription" required></textarea>
+                </label>
+
+                <label>Upload Media:                <input type="file" id="mediaInput" accept="image/*, video/*" multiple>
+                </label>
+
+                <div class="form-actions">
+                    <button type="submit" class="save-btn">Save Event</button>
+                    <button type="button" class="cancel-btn" id="cancelEventBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="static/faculty.js"></script>
+</body>
+</html>
